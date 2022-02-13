@@ -11,6 +11,9 @@
     <script>
 
         const rpsList = ["rock", "paper", "scissors"];
+        let playerScore = 0;
+        let computerScore = 0;
+        let tie = 0;
 
         function computerPlay() {
 
@@ -22,27 +25,58 @@
         function playRound(playerSelection, computerSelection) {
 
             if ( playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "scissors" && computerSelection === "paper" || playerSelection === "paper" && computerSelection === "rock" ) {
-                
+                playerScore++;
                 return "You win";
+               
             }
             else if (playerSelection === "rock" && computerSelection === "rock" || playerSelection === "paper" && computerSelection === "paper" || playerSelection === "scissors" && computerSelection === "scissors") {
-                
+                tie++;
                 return "it's a tie";
+                
             }
             else {
-                
+                computerScore++;
                 return "You lose";
+                
             }
 
 
 
 
         }
-        let playerSelection = prompt("enter either rock, paper or scissors", "");
-        
-        let computerSelection = computerPlay();
 
-        console.log(playRound(playerSelection, computerSelection));
+        
+        
+
+        function game() {
+            for(let i = 0; i < 5; i++) {
+
+               let n = playRound(playerSelection = prompt("enter either rock, paper or scissors", ""), computerSelection = computerPlay());
+               console.log(n);
+            
+               
+            }
+            
+           
+           } 
+              
+            
+       game();
+
+       if (playerScore>computerScore) {
+           alert("you have won");
+       }
+       else if (computerScore > playerScore) {
+           alert ("you have lost");
+       }
+       else {
+           alert("its a tie");
+       }
+
+
+
+       
+    
 
 
 
