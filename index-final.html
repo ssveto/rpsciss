@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, paper, scissors</title>
+</head>
+<body>
+    <script>
+
+        const rpsList = ["rock", "paper", "scissors"];
+        let computerScore = 0;
+        let playerScore = 0;
+
+        function computerPlay() {
+
+            let rpsComputer = rpsList[Math.floor(Math.random() * rpsList.length)];
+            return rpsComputer;
+
+        }
+        
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection === "rock" && computerSelection === "scissors") {
+                playerScore++;
+                return "You won, rock beats scissors";
+            }
+            else if (playerSelection === "scissors" && computerSelection === "rock" ) {
+                computerScore++;
+                return "You lost, rock beats scissors";
+            }
+            else if (playerSelection === "paper" && computerSelection === "rock" ) {
+                playerScore++;
+                return "You won, paper beats rock";
+            }
+            else if (playerSelection === "rock" && computerSelection === "paper" ) {
+                computerScore++;
+                return "You lost, paper beats rock";
+            }
+            else if (playerSelection === "scissors" && computerSelection === "paper" ) {
+                playerScore++;
+                return "You won, scissors beats paper";
+            }
+            else if (playerSelection === "paper" && computerSelection === "scissors" ) {
+                computerScore++;
+                return "You lost, scissors beats paper";
+            }
+            
+            else if (playerSelection === "paper" && computerSelection === "paper" ) {
+                return "draw, both picked paper";
+            }
+            else if (playerSelection === "rock" && computerSelection === "rock" ) {
+                return "draw, both picked rock";
+            }
+            else if (playerSelection === "scissors" && computerSelection === "scissors" ) {
+                return "draw, both picked scissors";
+            }
+            else {
+                computerScore++;
+                return "typo";
+            }
+        } 
+
+        function game() {
+            for (let i = 0; i < 5; i++) {
+                console.log(playRound(playerSelection = prompt ("enter either rock, paper or scissors", ""), computerSelection = computerPlay()));
+            }
+        }
+        
+        game();
+
+
+        if (playerScore > computerScore) {
+            alert ("Congrats, you won! Your score is: " + playerScore + ". Computer score: " + computerScore + ".");
+        }
+        else if (computerScore > playerScore) {
+            alert ("Sorry, you lost! Your score is: " + playerScore + ". Computer score: " + computerScore + ".");
+        }
+        else {
+            alert("It's a tie; Your score is: " + playerScore + ". Computer score: " + computerScore + "."); 
+        }
+
+
+
+
+    </script>
+    
+</body>
+</html>
