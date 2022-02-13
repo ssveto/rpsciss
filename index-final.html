@@ -66,7 +66,7 @@
                 console.log(playRound(playerSelection = prompt ("enter either rock, paper or scissors", ""), computerSelection = computerPlay()));
             }
         }
-        
+
         game();
 
 
@@ -77,7 +77,16 @@
             alert ("Sorry, you lost! Your score is: " + playerScore + ". Computer score: " + computerScore + ".");
         }
         else {
-            alert("It's a tie; Your score is: " + playerScore + ". Computer score: " + computerScore + "."); 
+            alert("It's a tie! Your score is: " + playerScore + ". Computer score: " + computerScore + "."); 
+        }
+
+        let newGame = confirm("you wanna play new game");
+
+        if (newGame == true) {
+            game();
+        }
+        else {
+            alert("Thanks for playing!");
         }
 
 
