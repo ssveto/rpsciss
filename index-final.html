@@ -63,7 +63,7 @@
 
         function game() {
             for (let i = 0; i < 5; i++) {
-                console.log(playRound(playerSelection = prompt ("enter either rock, paper or scissors", ""), computerSelection = computerPlay()));
+                console.log(playRound(playerSelection = prompt ("enter either rock, paper or scissors", "").toLowerCase(), computerSelection = computerPlay()));
             }
         }
 
